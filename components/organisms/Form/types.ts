@@ -1,13 +1,19 @@
 interface IFormProps {
 	action: string;
 	rows: {
-		controls: object[];
+		controls: {
+			__type: string;
+			hideLabel?: boolean;
+			hint?: string;
+			id?: string;
+			isOptional?: boolean;
+			label?: string;
+			name?: string;
+			placeholder?: string;
+			type?: 'text';
+		}[];
 	}[];
 	title: string;
-
-	/**
-	 * Some description...
-	 */
 	utilities?: string[];
 }
 

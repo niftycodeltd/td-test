@@ -51,8 +51,11 @@ const Subscriptions = ({ form, text, title }: ISubscriptionsProps) => {
 			{form && (
 				<Container width="md">
 					<Form
+						// @ts-expect-error TODO
 						action={form.action}
+						// @ts-expect-error TODO
 						rows={form.rows}
+						// @ts-expect-error TODO
 						title={form.title}
 					/>
 				</Container>

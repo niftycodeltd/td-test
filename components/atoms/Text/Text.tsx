@@ -21,6 +21,7 @@ const Text = ({
 				...utilities,
 			].join(' ')}
 		>
+			{/* @ts-expect-error TODO */}
 			{children || text}
 		</p>
 	);

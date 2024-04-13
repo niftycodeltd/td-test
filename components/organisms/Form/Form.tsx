@@ -66,9 +66,9 @@ const Form = ({ action, rows, title, utilities }: IFormProps) => {
 										return (
 											isInvalid && (
 												<Alert
-													key={`control-${index}__${control.type}`}
+													key={`control-${index}__${control.__type}`}
 													isDismissible
-													text={`Failed to save because ${errors.length} field${errors.length > 1 ? 's are' : ' is'} invalid`}
+													text={`Failed to save because ${Object.keys(errors).length} field${Object.keys(errors).length > 1 ? 's are' : ' is'} invalid`}
 													variant="error"
 												/>
 											)
@@ -76,9 +76,9 @@ const Form = ({ action, rows, title, utilities }: IFormProps) => {
 									case 'button':
 										return (
 											<Button
-												key={`control-${index}__${control.type}`}
+												key={`control-${index}__${control.__type}`}
 												isDisabled={isSubmitting}
-												label={control.label}
+												label={control.label as string}
 												type="submit"
 												utilities={[
 													'grow-0',
@@ -89,8 +89,9 @@ const Form = ({ action, rows, title, utilities }: IFormProps) => {
 									case 'input':
 										return (
 											<Controller
-												key={`control-${index}__${control.type}`}
+												key={`control-${index}__${control.__type}`}
 												control={rhfControl}
+												// @ts-expect-error TODO
 												name={control.name}
 												render={({
 													field: {
@@ -108,11 +109,17 @@ const Form = ({ action, rows, title, utilities }: IFormProps) => {
 															control.hideLabel
 														}
 														hint={control.hint}
-														id={control.id}
-														label={control.label}
+														id={
+															control.id as string
+														}
+														label={
+															control.label as string
+														}
 													>
 														<Input
-															id={control.id}
+															id={
+																control.id as string
+															}
 															isInvalid={
 																name in errors
 															}
@@ -127,8 +134,8 @@ const Form = ({ action, rows, title, utilities }: IFormProps) => {
 															}
 															relatedIds={relatedIds(
 																name in errors,
-																control.hint,
-																control.id,
+																control.hint as string,
+																control.id as string,
 															)}
 															type={control.type}
 															utilities={['grow']}
