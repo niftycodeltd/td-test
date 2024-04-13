@@ -1,4 +1,27 @@
 /**
+ * @param error
+ * @param hint
+ * @param id
+ */
+const relatedIds = (error: boolean, hint: string, id: string): string => {
+	let ids = '';
+
+	if (hint) {
+		ids += `${id}-hint`;
+	}
+
+	if (hint && error) {
+		ids += ' ';
+	}
+
+	if (error) {
+		ids += `${id}-error`;
+	}
+
+	return ids;
+};
+
+/**
  * @param number
  */
 const round = (number: number): string => {
@@ -8,4 +31,4 @@ const round = (number: number): string => {
 		.replace(/\.0$/, '');
 };
 
-export { round };
+export { relatedIds, round };
