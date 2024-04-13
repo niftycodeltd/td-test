@@ -1,4 +1,3 @@
-
 import { colours, sizes, weights } from './constants';
 import { ILabelProps } from './types';
 const Label = ({

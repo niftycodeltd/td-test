@@ -25,7 +25,13 @@ const Container = ({
 
 	return (
 		<Tag
-			className={[widths[width], 'mx-auto', 'px-md', 'w-full', ...utilities].join(' ')}
+			className={[
+				widths[width],
+				'mx-auto',
+				'px-md',
+				'w-full',
+				...utilities,
+			].join(' ')}
 		>
 			{children}
 		</Tag>
