@@ -35,6 +35,7 @@ const Page = () => {
 
 			<Subscriptions
 				form={{
+					// @ts-expect-error TODO
 					action: '/thank-you',
 					rows: [
 						{
