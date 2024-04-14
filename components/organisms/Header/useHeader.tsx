@@ -1,13 +1,3 @@
-/*
- |-----------------------------------------------------------------------------
- | components/organisms/Header/useHeader.tsx
- | v1.0.0
- |-----------------------------------------------------------------------------
- |
- | Some description...
- |
- */
-
 'use client';
 
 import { useEffect, useState } from 'react';

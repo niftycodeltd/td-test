@@ -14,8 +14,8 @@ const Header = () => {
 	return (
 		<header
 			className={[
-				...(isOpen ? ['bg-brand-1'] : []),
-				...(isSticky ? ['bg-brand-1'] : []),
+				...(isOpen ? ['bg-primary-500'] : []),
+				...(isSticky ? ['bg-primary-500'] : []),
 				...(isHidden
 					? isOpen
 						? ['opacity-100']

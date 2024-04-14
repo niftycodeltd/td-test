@@ -95,7 +95,7 @@ const Banner = ({ images, text, title }: IBannerProps) => {
 							gradientTransform="translate(902.415 203.763) rotate(-169.347) scale(152.052 370.033)"
 						>
 							<stop offset="0.447917" />
-							<stop offset="1" stop-opacity="0" />
+							<stop offset="1" stopOpacity="0" />
 						</radialGradient>
 					</defs>
 				</svg>
